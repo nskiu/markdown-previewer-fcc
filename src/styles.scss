@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: #1f2933;
 }
 $ui-bg: #cbd2d9;
 $code-bg: #f5f7fa;
@@ -51,6 +52,8 @@ body {
     background: $code-bg;
     padding: 2px;
     margin: 2px;
+    font-weight: bold;
+    color: black;
   }
 
   pre {

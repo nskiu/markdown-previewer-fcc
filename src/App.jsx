@@ -4,9 +4,21 @@ import Preview from "./components/Preview";
 import { marked } from "marked";
 import { mangle } from "marked-mangle";
 import { gfmHeadingId } from "marked-gfm-heading-id";
+import { markedHighlight } from "marked-highlight";
+import Prism from "prismjs";
 import placeholder from "./assets/placeholder.txt";
 
-marked.use(mangle(), gfmHeadingId(""), { breaks: true });
+marked.use(
+  markedHighlight({
+    langPrefix: "token",
+    highlight(code) {
+      return Prism.highlight(code, Prism.languages.javascript, "javascript");
+    },
+  }),
+  mangle(),
+  gfmHeadingId(""),
+  { breaks: true }
+);
 
 const App = () => {
   const firstRunKey = Math.random().toString();
