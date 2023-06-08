@@ -1,9 +1,5 @@
-
-
 const Preview = () => {
-  return (
-    <div id="preview">Preview</div>
-  )
-}
+  return <div id="preview">Preview</div>;
+};
 
-export default Preview
+export default Preview;

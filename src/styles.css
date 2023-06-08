@@ -1,3 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background: #2c3142;
+  background: #2c3142 !important;
+}
+
+#app {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+#editor {
+  width: 800px;
+  height: 200px !important;
+  resize: none;
+}
+
+#preview {
+  background: whitesmoke;
+  width: 800px;
+  height: 500px;
 }

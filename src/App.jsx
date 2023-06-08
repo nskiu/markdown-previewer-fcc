@@ -6,10 +6,9 @@ import { marked } from "marked";
 const App = () => {
   const [input, setInput] = useState("test");
   return (
-    <div>
+    <div id="app">
       <Editor input={input} />
       <Preview />
-      {marked.parse("# Marked in Node.js\n\nRendered by **marked**.")}
     </div>
   );
 };
