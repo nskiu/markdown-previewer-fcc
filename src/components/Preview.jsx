@@ -1,5 +1,5 @@
-const Preview = ({ input }) => {
-  return <div id="preview">{input}</div>;
+const Preview = () => {
+  return <div id="preview"></div>;
 };
 
 export default Preview;
