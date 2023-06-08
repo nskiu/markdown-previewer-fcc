@@ -4,19 +4,29 @@ import Preview from "./components/Preview";
 import { marked } from "marked";
 import { mangle } from "marked-mangle";
 import { gfmHeadingId } from "marked-gfm-heading-id";
+import placeholder from "./assets/placeholder.txt";
 
 const App = () => {
-  const [input, setInput] = useState("test \ntest");
+  marked.use(mangle(), gfmHeadingId(""), { breaks: true });
+  const firstRunKey = Math.random().toString();
+  const [input, setInput] = useState(firstRunKey);
+
+  if (input === firstRunKey) {
+    const fetchData = async () => {
+      let response = await fetch(placeholder);
+      response = await response.text();
+      setInput(response);
+    };
+    fetchData();
+  }
+
   const handleChange = (event) => {
     setInput(event);
   };
 
-  marked.use(mangle(), gfmHeadingId(""), { breaks: true });
-
   useEffect(() => {
-    const markedInput = marked.parse(input);
-    document.getElementById("preview").innerHTML = markedInput;
-  });
+    document.getElementById("preview").innerHTML = marked.parse(input);
+  }, [input]);
 
   return (
     <div id="app">

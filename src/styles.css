@@ -9,23 +9,23 @@ body {
 }
 
 #app {
-  height: 100vh;
   width: 100%;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+
   gap: 1rem;
 }
 
 #editor {
-  width: 800px;
-  height: 200px !important;
-  resize: none;
+  width: 600px;
+  min-height: 200px;
+  resize: vertical;
 }
 
 #preview {
   background: whitesmoke;
   width: 800px;
-  height: 500px;
+  min-height: 500px;
+  height: auto;
 }
