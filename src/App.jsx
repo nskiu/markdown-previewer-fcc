@@ -5,10 +5,13 @@ import { marked } from "marked";
 
 const App = () => {
   const [input, setInput] = useState("test");
+  const handleChange = (event) => {
+    setInput(event);
+  };
   return (
     <div id="app">
-      <Editor input={input} />
-      <Preview />
+      <Editor input={input} handleChange={handleChange} />
+      <Preview input={input} />
     </div>
   );
 };

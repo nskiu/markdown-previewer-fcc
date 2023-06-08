@@ -1,7 +1,11 @@
-const Editor = ({ input }) => {
+const Editor = ({ input, handleChange }) => {
   return (
     <div>
-      <textarea id="editor" value={input}></textarea>
+      <textarea
+        id="editor"
+        onChange={(event) => handleChange(event.target.value)}
+        value={input}
+      ></textarea>
     </div>
   );
 };
