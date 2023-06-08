@@ -6,8 +6,9 @@ import { mangle } from "marked-mangle";
 import { gfmHeadingId } from "marked-gfm-heading-id";
 import placeholder from "./assets/placeholder.txt";
 
+marked.use(mangle(), gfmHeadingId(""), { breaks: true });
+
 const App = () => {
-  marked.use(mangle(), gfmHeadingId(""), { breaks: true });
   const firstRunKey = Math.random().toString();
   const [input, setInput] = useState(firstRunKey);
 
