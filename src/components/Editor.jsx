@@ -1,8 +1,9 @@
-
-const Editor = () => {
+const Editor = ({ input }) => {
   return (
-    <div id="editor">Editor</div>
-  )
-}
+    <div>
+      <textarea id="editor" value={input}></textarea>
+    </div>
+  );
+};
 
-export default Editor
+export default Editor;
