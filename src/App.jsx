@@ -1,35 +1,23 @@
 import { useEffect, useState } from "react";
 import { marked } from "marked";
-import { mangle } from "marked-mangle";
-import { gfmHeadingId } from "marked-gfm-heading-id";
-import { markedHighlight } from "marked-highlight";
-import Prism from "prismjs";
-import placeholder from "./assets/placeholder.txt";
+import { markedUse } from "./assets/markeduse";
 import Editor from "./components/Editor";
 import Preview from "./components/Preview";
+import placeholder from "./assets/placeholder.txt";
 
-marked.use(
-  markedHighlight({
-    langPrefix: "token",
-    highlight(code) {
-      return Prism.highlight(code, Prism.languages.javascript, "javascript");
-    },
-  }),
-  mangle(),
-  gfmHeadingId(""),
-  { breaks: true }
-);
+markedUse();
+let loading = true;
 
 const App = () => {
-  const firstRunKey = Math.random().toString();
-  const [input, setInput] = useState(firstRunKey);
+  const [input, setInput] = useState("");
   const [toggle, setToggle] = useState({ editor: false, preview: false });
 
-  if (input === firstRunKey) {
+  if (loading) {
     const fetchData = async () => {
       let response = await fetch(placeholder);
       response = await response.text();
       setInput(response);
+      loading = false;
     };
     fetchData();
   }

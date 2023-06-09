@@ -39,6 +39,7 @@ body {
 }
 #preview {
   background: $window-bg;
+  width: 90vw;
   max-width: 800px;
   min-height: 500px;
   height: auto;
@@ -121,5 +122,5 @@ body {
 }
 
 footer {
-  width: 800px;
+  width: 80%;
 }
