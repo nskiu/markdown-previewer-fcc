@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import Editor from "./components/Editor";
-import Preview from "./components/Preview";
 import { marked } from "marked";
 import { mangle } from "marked-mangle";
 import { gfmHeadingId } from "marked-gfm-heading-id";
 import { markedHighlight } from "marked-highlight";
 import Prism from "prismjs";
 import placeholder from "./assets/placeholder.txt";
+import Editor from "./components/Editor";
+import Preview from "./components/Preview";
 
 marked.use(
   markedHighlight({
@@ -42,7 +42,7 @@ const App = () => {
   }, [input]);
 
   return (
-    <div id="app">
+    <div id="app" className="px-4">
       <Editor input={input} handleChange={handleChange} />
       <Preview />
     </div>
