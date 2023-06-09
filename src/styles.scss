@@ -30,11 +30,13 @@ body {
   background: $window-bg;
   width: 100%;
   max-width: 600px;
-  min-height: 200px;
   resize: vertical;
   font-family: monospace;
+  font-size: 0.9rem;
 }
-
+#editor:focus {
+  outline: none;
+}
 #preview {
   background: $window-bg;
   max-width: 800px;
@@ -113,6 +115,11 @@ body {
     }
   }
 }
-#editordiv {
+
+.editor {
   max-width: 600px;
+}
+
+footer {
+  width: 800px;
 }
